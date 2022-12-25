@@ -1,0 +1,22 @@
+.card-num{
+  
+  
+  width: 40px;
+  border: 1px solid lightgray;
+ 
+  height: 50px;
+  box-shadow: 5px 5px 5px 1px rgba(120,120,120,0.44);
+  -webkit-box-shadow: 5px 5px 5px 1px rgba(120,120,120,0.44);
+  -moz-box-shadow: 5px 5px 5px 1px rgba(120,120,120,0.44);
+}
+
+.Card-container{
+  margin: 0% 20% 0% 20%;
+  padding-left: 5%;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: .1px;
+
+}
