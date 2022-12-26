@@ -40,7 +40,7 @@ const CardElements =  cardDeck.map(card => (
   key={card.id} 
   value={card.value} 
   match={card.match}
-  holdDice={() => holdCard(die.id)}
+  holdDice={() => holdCard(card.id)}
   />))
 
 
