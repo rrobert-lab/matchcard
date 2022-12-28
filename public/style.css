@@ -1,22 +1,49 @@
 .card-num{
-  
+display: flex;
+align-self: center;
+justify-self: center;
   
   width: 40px;
   border: 1px solid lightgray;
- 
-  height: 50px;
-  box-shadow: 5px 5px 5px 1px rgba(120,120,120,0.44);
-  -webkit-box-shadow: 5px 5px 5px 1px rgba(120,120,120,0.44);
-  -moz-box-shadow: 5px 5px 5px 1px rgba(120,120,120,0.44);
+  width: 80%;
+  height: auto;
+  
+  
 }
 
 .Card-container{
-  margin: 0% 20% 0% 20%;
-  padding-left: 5%;
+
+
   border: 1px solid lightgray;
-  border-radius: 10px;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: .1px;
+
+  display: grid ;
+  grid-template-columns: repeat(5, 20%); 
+
+  gap: 0%;
+  place-self: center;
+ 
+
 
 }
+#root{
+  
+  
+ 
+border: 1px solid black;
+border-radius: 10px;
+width: auto;
+
+margin: 0% 20% 90% 20%;
+box-shadow: 5px 5px 5px 1px rgba(120,120,120,0.44);
+  -webkit-box-shadow: 5px 5px 5px 1px rgba(120,120,120,0.44);
+  -moz-box-shadow: 5px 5px 5px 1px rgba(120,120,120,0.44);
+}
+.card-face{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  
+ 
+}
+.titletext{font-size: 1rem;}
