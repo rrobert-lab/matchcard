@@ -27,7 +27,7 @@ justify-self: center;
 .Card-container{
  
   
-  border:none;
+  
  
   
   display:grid ;
@@ -40,7 +40,8 @@ justify-self: center;
   justify-content: center;
   vertical-align: top;
   box-shadow: 10px 10px 5px black;
-  
+  border:2px solid black;
+  border-radius: 2%;
   
 
 
@@ -48,11 +49,9 @@ justify-self: center;
 #root{
   
   
-  
-border: solid 2px black;
 
 
- margin: 0% 25% 0% 25%;
+ margin: 0% 25% 10% 25%;
 
 }
 .card-face{
@@ -92,7 +91,7 @@ img{
 }
 main{
   vertical-align: top;
-
+  border-radius: 2%;
 }
 
 
