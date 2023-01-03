@@ -2,7 +2,7 @@
 display: flex;
 align-self: center;
 justify-self: center;
-  
+
   width: 40px;
   border: 1px solid lightgray;
   width: 80%;
@@ -43,6 +43,7 @@ box-shadow: 5px 5px 5px 1px rgba(120,120,120,0.44);
   align-items: center;
   justify-content: center;
   height: auto;
+  
   
  
 }
