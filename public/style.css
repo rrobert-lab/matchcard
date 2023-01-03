@@ -1,15 +1,21 @@
 *{
   padding: 0%;
   margin: 0%;
-  display: block;
+  box-sizing: border-box;
+  
 }
-body{background:  no-repeat url('.\background.jpg');
+body{  background-image: url("background.jpg");
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container*/
+  overflow: hidden;
   
 }
 
 .card-num{
+  display: block;
   
-  border-radius: 10px;
+  border-radius: 100%;
   border:none;
 display: flex;
 align-self: center;
@@ -20,56 +26,74 @@ justify-self: center;
 }
 .Card-container{
  
-gap: 0;
+  
   border:none;
+ 
   
   display:grid ;
-  grid-template-columns: repeat(5,minmax(0, 20fr)); 
-  
 
- 
+  grid-template-columns: repeat(5,18%); 
+  
+  grid-template-rows: repeat(4, 15%);
+  gap: 3%;
+  align-items: center;
+  justify-content: center;
+  vertical-align: top;
+  box-shadow: 10px 10px 5px black;
+  
+  
 
 
 }
 #root{
-  background-color: black;
   
   
-border: none;
-border-radius: 10px;
+  
+border: solid 2px black;
 
-margin: 0% 25% 0% 25%;
-box-shadow: 5px 5px 5px 1px rgba(120,120,120,0.44);
-  -webkit-box-shadow: 5px 5px 5px 1px rgba(120,120,120,0.44);
-  -moz-box-shadow: 5px 5px 5px 1px rgba(120,120,120,0.44);
+
+ margin: 0% 25% 0% 25%;
+
 }
 .card-face{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-height: 70%;
-  border-radius: 10px;
+  
+  
+
+
+border: solid 1px black;
+  border-radius: 50%;
   border: none;
  
   
  
 }
-.titletext{font-size: 1rem;}
+.titletext{font-size: 1.5rem;
+  font-weight: 900;
+color: rgb(198, 198, 246);}
 .cards{
-height:10%;
+
 
 border: none;
 
 
 }
 .cardalt{
-  height:10%;
- 
+  
+ border-radius: 100%;
   width: 20%;
  border: none;
 
 }
 img{
-width: 100%;
-height: 50%;
+  border-radius: 100%;
+  width:100%;
+  
+  object-fit: cover;
 }
+main{
+  vertical-align: top;
+
+}
+
+
+

@@ -1,17 +1,19 @@
 import React from "react"
 import {nanoid} from "nanoid"
 import Card from "./card"
-
+import Confetti from "react-confetti"
 let matchcard=[]
 let idrecord=[]
 
 
 export default function App() {
   const[cardDeck, setCardDeck]=React.useState(NewCard())
-
-  
+  const [win, setwin] = React.useState(false)
   React.useEffect(() => {
-   
+    const allSameValue = cardDeck.every(die => die.match === true)
+  if (allSameValue) {
+    setwin(true)
+}
     
 }, [cardDeck])
 
@@ -126,6 +128,7 @@ const CardElements =  cardDeck.map(card => (
 
 return (
   <main>
+     {win && <Confetti />}
   <div className="Card-container">
       {CardElements}
   </div>
