@@ -1,8 +1,10 @@
 import React from "react"
 import {nanoid} from "nanoid"
 import Card from "./card"
+
 let matchcard=[]
 let idrecord=[]
+
 
 export default function App() {
   const[cardDeck, setCardDeck]=React.useState(NewCard())

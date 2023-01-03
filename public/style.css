@@ -1,39 +1,44 @@
+*{
+  padding: 0%;
+  margin: 0%;
+  display: block;
+}
+body{background:  no-repeat url('.\background.jpg');
+  
+}
+
 .card-num{
+  
+  border-radius: 10px;
+  border:none;
 display: flex;
 align-self: center;
 justify-self: center;
 
-  width: 40px;
-  border: 1px solid lightgray;
-  width: 80%;
-  height: auto;
   
   
 }
-
 .Card-container{
+ 
+gap: 0;
+  border:none;
+  
+  display:grid ;
+  grid-template-columns: repeat(5,minmax(0, 20fr)); 
+  
 
-
-  border: 1px solid lightgray;
-
-  display: grid ;
-  grid-template-columns: repeat(5, 20%); 
-
-  gap: 0%;
-  place-self: center;
  
 
 
 }
 #root{
+  background-color: black;
   
   
- 
-border: 1px solid black;
+border: none;
 border-radius: 10px;
-width: auto;
 
-margin: 0% 20% 90% 20%;
+margin: 0% 25% 0% 25%;
 box-shadow: 5px 5px 5px 1px rgba(120,120,120,0.44);
   -webkit-box-shadow: 5px 5px 5px 1px rgba(120,120,120,0.44);
   -moz-box-shadow: 5px 5px 5px 1px rgba(120,120,120,0.44);
@@ -42,9 +47,29 @@ box-shadow: 5px 5px 5px 1px rgba(120,120,120,0.44);
   display: flex;
   align-items: center;
   justify-content: center;
-  height: auto;
-  
+height: 70%;
+  border-radius: 10px;
+  border: none;
+ 
   
  
 }
 .titletext{font-size: 1rem;}
+.cards{
+height:10%;
+
+border: none;
+
+
+}
+.cardalt{
+  height:10%;
+ 
+  width: 20%;
+ border: none;
+
+}
+img{
+width: 100%;
+height: 50%;
+}
