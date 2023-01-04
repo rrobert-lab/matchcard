@@ -3,7 +3,7 @@ import React from "react"
 export default function Card(props) {
   const styles = {
    
-    backgroundColor: props.clicky ? "orange" : props.match?"gold":""
+    backgroundColor: props.clicky ? "" : props.match?"gold":""
 }
 
   return (
