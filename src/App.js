@@ -46,7 +46,7 @@ setTimeout(function() {
     idb:0}))
 
 
-}, 1200);
+}, 500);
 
 
 }, [cardymatch])
