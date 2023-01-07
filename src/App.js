@@ -6,6 +6,7 @@ let matchcard=[]
 let idrecord=[]
 
 
+
 export default function App() {
   const[cardDeck, setCardDeck]=React.useState(NewCard())
   const [win, setwin] = React.useState(false)
@@ -13,9 +14,42 @@ export default function App() {
     const allSameValue = cardDeck.every(die => die.match === true)
   if (allSameValue) {
     setwin(true)
-}
-    
+}    
+console.log(cardDeck)
 }, [cardDeck])
+
+const [cardymatch, setcardymatch] = React.useState(matchcardst())
+React.useEffect(() => {
+
+  console.log(cardymatch.valueb)
+
+if ((cardymatch.valuea===cardymatch.valueb) && (cardymatch.ida!==cardymatch.idb))
+{console.log("match")
+  setCardDeck(oldCard => oldCard.map(Cards => {
+      
+    return  (Cards.id ===cardymatch.ida) ||(Cards.id ===cardymatch.idb)? 
+    {...Cards, match:  true}:
+        Cards
+  }))
+
+}
+console.log(cardymatch)
+if (cardymatch.turn>1)
+setTimeout(function() {
+
+
+  setCardDeck(oldCard => oldCard.map(card=>( {...card, clicky:  false})))
+  setcardymatch(card => ( {...card,  turn:0,
+    valuea:0,
+    valueb:0,
+    ida:0,
+    idb:0}))
+
+
+}, 1200);
+
+
+}, [cardymatch])
 
 
 //generate cards
@@ -42,64 +76,67 @@ function removeFirst(arr, target) {
 }
 
 function holdCard(id, value) {
-  console.log(idrecord)
-  console.log(id)
- idrecord.push(id)
- 
- 
+  
+
+  if(idrecord[0]===idrecord[1] || idrecord.length<1){
+idrecord=[]
+
+  }
+
+
+
+ setcardymatch(eee=> ({...eee, 
+  ida:eee.turn===0?id:eee.ida,idb: eee.turn===1?id:eee.idb, 
+  valuea:eee.turn===0?value:eee.valuea,
+  valueb: ((eee.turn===1))?value:eee.valueb, 
+  turn:eee.turn>1?0:eee.turn+1  }))
+
+
+
+  
   setCardDeck(oldCard => oldCard.map(Cards => {
       
     return  Cards.id ===id? 
-    {...Cards,  clicky:  true}:
+    {...Cards,  clicky:  !Cards.clicky}:
         Cards
   }))
+console.log(cardDeck)
 
- 
   
   
 if(idrecord[0]!==idrecord[1]){
   
 
 matchcard.push(value)
-}
-if (matchcard[0]===matchcard[1]){
- 
-  setCardDeck(oldCard => oldCard.map(Cards => {
-      
-    return  Cards.id ===idrecord[1]? 
-    {...Cards, match:  !Cards.match}:
-        Cards
-  }))}
-  if (matchcard[0]===matchcard[1]){
-    
-     setCardDeck(oldCard => oldCard.map(Cards => {
-         
-       return Cards.id ===idrecord[0]? 
-       {...Cards, match:  !Cards.match}:
-           Cards
-     }))}
 
 
 
+
+    }
      
 
-
-
-if(matchcard.length>2){
-
-
-setCardDeck(oldCard => oldCard.map(card=>( {...card, clicky:  false}))
-)
-idrecord=[];
-matchcard=[];
 }
 
 
 
+function matchcardst() {
+  let turn=0;
+  let ida="";
+  let idb="";
+  let valuea="";
+  let valueb="";
 
   
+  return {
+ 
+    turn,
+    valuea,
+    valueb,
+    ida,
+    idb
 }
 
+}
 function generateNewCards(value) {
           return {
           
