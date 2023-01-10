@@ -100,6 +100,14 @@ main{
   vertical-align: top;
   border-radius: 2%;
 }
+.scoreBox{
+  font-size: larger;
+  margin-left: auto;
+    margin-right: auto; 
+  background-color: green;
 
+  border: 3px solid black;
+
+}
 
 

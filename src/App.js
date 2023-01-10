@@ -8,23 +8,24 @@ let idrecord=[]
 
 
 export default function App() {
+ 
   const[cardDeck, setCardDeck]=React.useState(NewCard())
+ 
   const [win, setwin] = React.useState(false)
   React.useEffect(() => {
-    const allSameValue = cardDeck.every(die => die.match === true)
+
+const allSameValue = cardDeck.every(die => die.match === true)
   if (allSameValue) {
     setwin(true)
-}    
-console.log(cardDeck)
+  }    
+
 }, [cardDeck])
 
 const [cardymatch, setcardymatch] = React.useState(matchcardst())
 React.useEffect(() => {
 
-  console.log(cardymatch.valueb)
-
 if ((cardymatch.valuea===cardymatch.valueb) && (cardymatch.ida!==cardymatch.idb))
-{console.log("match")
+{
   setCardDeck(oldCard => oldCard.map(Cards => {
       
     return  (Cards.id ===cardymatch.ida) ||(Cards.id ===cardymatch.idb)? 
@@ -33,13 +34,12 @@ if ((cardymatch.valuea===cardymatch.valueb) && (cardymatch.ida!==cardymatch.idb)
   }))
 
 }
-console.log(cardymatch)
+
 if (cardymatch.turn>1)
 setTimeout(function() {
 
-
-  setCardDeck(oldCard => oldCard.map(card=>( {...card, clicky:  false})))
-  setcardymatch(card => ( {...card,  turn:0,
+setCardDeck(oldCard => oldCard.map(card=>( {...card, clicky:  false})))
+setcardymatch(card => ( {...card,  turn:0,
     valuea:0,
     valueb:0,
     ida:0,
@@ -88,8 +88,10 @@ idrecord=[]
  setcardymatch(eee=> ({...eee, 
   ida:eee.turn===0?id:eee.ida,idb: eee.turn===1?id:eee.idb, 
   valuea:eee.turn===0?value:eee.valuea,
-  valueb: ((eee.turn===1))?value:eee.valueb, 
-  turn:eee.turn>1?0:eee.turn+1  }))
+  valueb: (eee.turn===1)?value:eee.valueb, 
+  turn:eee.turn>1?0:eee.turn+1,score:eee.turn===0?eee.score+1:eee.score}))
+  console.log(cardymatch.score)
+
 
 
 
@@ -125,6 +127,8 @@ function matchcardst() {
   let idb="";
   let valuea="";
   let valueb="";
+  let score=0;
+ 
 
   
   return {
@@ -133,7 +137,8 @@ function matchcardst() {
     valuea,
     valueb,
     ida,
-    idb
+    idb,
+    score
 }
 
 }
@@ -143,7 +148,8 @@ function generateNewCards(value) {
           value: value,
           id: nanoid(),
           match:false,
-          clicky:false
+          clicky:false,
+          score:0
         }
      
 }
@@ -168,6 +174,7 @@ return (
      {win && <Confetti />}
   <div className="Card-container">
       {CardElements}
+      <section className="scoreBox" >Turns:{cardymatch.score}</section>
   </div>
 </main> 
 )
