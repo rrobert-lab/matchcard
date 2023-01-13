@@ -1,20 +1,16 @@
 *{
-  padding: 0%;
-  margin: 0%;
-  box-sizing: border-box;
-  
-}
-body{  background-image: url("background.jpg");
+  margin: 0;
+padding: 0;}
+
+body{  background-image: url("background.jpg")  ;
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover; /* Resize the background image to cover the entire container*/
  
-  height:100%;
-  max-width: 1500px;
-  margin-top: 5%;
+ 
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: start;
   align-items: center;
   
 }
@@ -39,9 +35,9 @@ justify-self: center;
   
   display:grid ;
 
-  grid-template-columns: repeat(5,18%); 
+  grid-template-columns: repeat(4,18%); 
   
-  grid-template-rows: repeat(4, 15%);
+  grid-template-rows: repeat(5, 15%);
   gap: 3%;
   align-items: center;
   justify-content: center;
@@ -53,14 +49,7 @@ justify-self: center;
 
 
 }
-#root{
-  
-  
 
-
- margin: 0% 25% 10% 25%;
-
-}
 .card-face{
   
   
@@ -87,14 +76,16 @@ border: none;
   
  border-radius: 100%;
   width: 20%;
+  min-width:380px;
  border: none;
 
 }
 img{
   border-radius: 100%;
-  width:100%;
   
-  object-fit: cover;
+
+  
+
 }
 main{
   vertical-align: top;
@@ -102,12 +93,23 @@ main{
 }
 .scoreBox{
   font-size: larger;
-  margin-left: auto;
-    margin-right: auto; 
-  background-color: green;
+ margin:0 ;
+ padding-left: 40%;
+  
+ 
+  background-color: yellow;
 
   border: 3px solid black;
 
-}
 
+}
+@media (min-width: 900px) {
+  .Card-container{
+  display:grid ;
+
+  grid-template-columns: repeat(5,18%); 
+  
+  grid-template-rows: repeat(4, 15%);
+  gap: 3%;}
+}
 

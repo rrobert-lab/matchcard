@@ -172,10 +172,12 @@ const CardElements =  cardDeck.map(card => (
 return (
   <main>
      {win && <Confetti />}
+     <section className="scoreBox" >Turns:{cardymatch.score}</section>
   <div className="Card-container">
       {CardElements}
-      <section className="scoreBox" >Turns:{cardymatch.score}</section>
+    
   </div>
+  
 </main> 
 )
 }
